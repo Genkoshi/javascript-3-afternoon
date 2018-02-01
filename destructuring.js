@@ -56,7 +56,10 @@ function greeting( obj ) {
 
 //Code Here
 
-
+var totalPopulation = (obj) => {
+  var {utah, california, texas, arizona} = obj;
+  return utah + california + texas + arizona;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -70,7 +73,12 @@ function greeting( obj ) {
 
 //Code Here
 
-
+var ingredients = (obj) => {
+  var {carb, fat, protein} = obj;
+  var arr = [];
+  arr.push(carb, fat, protein);
+  return arr;
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -88,7 +96,16 @@ function greeting( obj ) {
 
 //Code Here
 
-
+var largeNumbers = ({first, second, third}) => {
+  switch (true){
+    case first < second && first < third:
+      return first;
+    case second < first && second < third:
+      return second;
+    case third < first && third < second:
+      return third;
+  }
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -100,4 +117,16 @@ function greeting( obj ) {
 
 //Code Here
 
-
+var numberGroups = ({a, b, c}) => {
+  var l1 = a.length;
+  var l2 = b.length;
+  var l3 = c.length;
+  switch (true){
+    case l1 > l2 && l1 >l3:
+      return a;
+    case l2 > l1 && l2 > l3:
+      return b;
+    case l3 > l1 && l3 > l2:
+      return c;
+  }
+}

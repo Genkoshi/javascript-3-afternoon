@@ -79,7 +79,12 @@ var greaterThan10 = (obj) => {
 
 //Code Here
 
-
+var double = (obj) => {
+    for (let key in obj){
+      obj[key] *= 2;
+    }
+    return obj;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -93,7 +98,15 @@ var greaterThan10 = (obj) => {
 
 //Code Here
 
-
+var secrets = (obj) => {
+  var someString = "";
+  for (let key in obj){
+    if (key.toLowerCase().startsWith('sh')){
+      someString += obj[key];
+    }
+  }
+  return someString;
+}
 
 /* 
   Sometimes it's needed to delete object properties. 
@@ -124,7 +137,10 @@ var greaterThan10 = (obj) => {
 
 //Code Here
 
-
+var removePassword = (obj) => {
+  delete obj.password;
+  return obj;
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -142,7 +158,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for (let key in deleteTheBigNumbers){
+  if (deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -156,7 +176,14 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+var startsWithK = (obj) => {
+  for (let key in obj){
+    if (key.toLowerCase().startsWith('k')){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -170,5 +197,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+var hiddenTreasure = (obj) => {
+  for (let key in obj){
+    if (!obj[key].includes('treasure')){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 

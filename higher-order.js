@@ -63,7 +63,7 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce((accum, val) => accum + val);//  = populations.reduce(/* Provide Your Callback Here */)
 
 
 
@@ -89,7 +89,7 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter(index => index.CP > 200);// = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 
 
@@ -106,8 +106,7 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a high order method to get sum of all the order totals
 */
 
-let ordersTotal //Code Here
-
+let ordersTotal = orders.map(val => val.price * (val.tax +1)); //Code Here
 
 
 ////////// PROBLEM 6 //////////
@@ -126,6 +125,4 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
-
-
+let bobsTotal = purchases.filter(x => x.owner == "Bob").reduce((accum, val) => accum + val.price, 0) //Code Here
